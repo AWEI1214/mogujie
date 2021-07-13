@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-12 21:14:02
- * @LastEditTime: 2021-07-12 22:44:22
+ * @LastEditTime: 2021-07-13 09:34:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\supermall\src\App.vue
@@ -14,4 +14,5 @@
 </template>
 
 <style>
+@import "./assets/css/base.css";
 </style>
