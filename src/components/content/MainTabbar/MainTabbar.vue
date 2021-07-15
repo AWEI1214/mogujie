@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-13 10:06:26
- * @LastEditTime: 2021-07-13 11:08:36
+ * @LastEditTime: 2021-07-14 15:20:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\tabbar\src\components\MainTabbar.vue
 -->
 <template>
   <div>
-    <tabber>
+    <tabber class="tabber">
       <tabbarItem link="/home">
         <img src="@/assets/img/tabbar/home.svg" alt="" slot="item-icon" />
         <img
@@ -61,4 +61,7 @@ export default {
 </script>
 
 <style>
+.tabber {
+  z-index: 11;
+}
 </style>

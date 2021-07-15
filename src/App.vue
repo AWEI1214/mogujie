@@ -2,14 +2,14 @@
  * @Author:
   components: { MainTabbar }, your name
  * @Date: 2021-07-12 21:14:02
- * @LastEditTime: 2021-07-13 10:44:09
+ * @LastEditTime: 2021-07-15 16:11:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\supermall\src\App.vue
 -->
 <template>
   <div id="app">
-    <main-tabbar></main-tabbar>
+    <main-tabbar class="main-tabbar"></main-tabbar>
     <router-view />
   </div>
 </template>
@@ -24,4 +24,10 @@ export default {
 </script>
 <style>
 @import "./assets/css/base.css";
+#app {
+  /* margin-bottom: 50px; */
+}
+.main-tabbar {
+  z-index: 50;
+}
 </style>

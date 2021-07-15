@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-13 09:44:50
- * @LastEditTime: 2021-07-13 09:49:38
+ * @LastEditTime: 2021-07-14 15:32:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\supermall\vue.config.js
@@ -15,10 +15,12 @@ module.exports = {
     config.resolve.alias
       //set第一个参数：设置的别名，第二个参数：设置的路径
       .set('@', resolve('./src'))
-      .set('assets', resolve('.src/assets'))
+      .set('assets', resolve('./src/assets'))
       .set('components', resolve('./src/components'))
       .set('views', resolve('src/views'))
       .set('network', resolve('src/network'))
+      .set('img', resolve('./src/assets/img'))
+
 
   }
 }
