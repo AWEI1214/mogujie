@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-13 09:44:50
- * @LastEditTime: 2021-07-14 15:32:06
+ * @LastEditTime: 2021-07-22 20:38:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\supermall\vue.config.js
@@ -22,5 +22,10 @@ module.exports = {
       .set('img', resolve('./src/assets/img'))
 
 
-  }
+  },
+
+  publicPath: './'
+
+
+
 }

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-07-12 21:14:02
+ * @LastEditTime: 2021-07-22 20:38:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \supermall\src\router\index.js
+ */
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -42,7 +50,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
