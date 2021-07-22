@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-14 09:49:10
- * @LastEditTime: 2021-07-14 16:27:36
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\components\content\tabControl\tabControl.vue
--->
+
 <template>
   <div class="tab-control">
     <div

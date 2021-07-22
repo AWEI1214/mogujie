@@ -1,11 +1,5 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-14 14:18:18
- * @LastEditTime: 2021-07-14 15:03:09
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\components\content\goods\goodsList.vue
--->
+
+
 <template>
   <div class="goods">
     <goods-listitem
@@ -32,7 +26,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .goods {
   display: flex;
   flex-wrap: wrap;

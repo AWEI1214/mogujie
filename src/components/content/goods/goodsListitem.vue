@@ -1,14 +1,8 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-14 14:19:04
- * @LastEditTime: 2021-07-14 15:45:19
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\components\content\goods\goodsListitem.vue
--->
+
+
 <template>
-  <div class="goods-item">
-    <img :src="goodsItem.show.img" alt="" />
+  <div class="goods-item" @click="itemclick">
+    <img :src="showImage" alt="" @load="imgLoad" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price">{{ goodsItem.price }}</span>
@@ -27,10 +21,24 @@ export default {
       },
     },
   },
+  methods: {
+    imgLoad() {
+      // 发射事件总线
+      // this.$bus.$emit("imgLoad");
+    },
+    itemclick() {
+      this.$router.push("/detail/" + this.goodsItem.iid);
+    },
+  },
+  computed: {
+    showImage() {
+      return this.goodsItem.image || this.goodsItem.show.img;
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .goods-item {
   padding-bottom: 40px;
   position: relative;

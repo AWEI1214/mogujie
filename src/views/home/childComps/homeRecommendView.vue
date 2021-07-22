@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-13 21:50:38
- * @LastEditTime: 2021-07-13 22:22:34
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\views\home\childComps\homeRecommendView.vue
--->
+
 <template>
   <div class="recommend">
     <div

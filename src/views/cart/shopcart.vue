@@ -1,17 +1,46 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-08 16:55:40
- * @LastEditTime: 2021-07-08 16:57:46
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\tabbar\src\views\cart\shopcart.vue
---><<template>
-  <h2>购物</h2>
+
+<template>
+  <div class="cart">
+    <navbar class="navbar">
+      <div slot="center">购物车({{ cartLength }})</div>
+    </navbar>
+    <Cartlist />
+    <cart-bottom-bar></cart-bottom-bar>
+  </div>
 </template>
 
 <script>
-export default {};
+import navbar from "components/common/navbar/navbar.vue";
+import { mapGetters } from "vuex";
+import Cartlist from "./childComps/CartList.vue";
+import CartBottomBar from "./childComps/CartBottomBar.vue";
+
+export default {
+  data() {
+    return {
+      number: 5,
+    };
+  },
+  components: {
+    navbar,
+    Cartlist,
+    CartBottomBar,
+  },
+  computed: {
+    ...mapGetters(["cartLength"]),
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.cart {
+  height: 100vh;
+}
+
+.navbar {
+  background-color: var(--color-tint);
+  color: #fff;
+  font-weight: 500;
+}
 </style>
+

@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-14 09:13:36
- * @LastEditTime: 2021-07-14 09:28:14
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\views\home\childComps\featureView.vue
--->
+
 <template>
   <div class="feature">
     <a href="#">

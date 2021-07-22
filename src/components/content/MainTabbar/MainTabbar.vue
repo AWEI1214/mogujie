@@ -1,11 +1,5 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-13 10:06:26
- * @LastEditTime: 2021-07-14 15:20:09
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\tabbar\src\components\MainTabbar.vue
--->
+
+
 <template>
   <div>
     <tabber class="tabber">

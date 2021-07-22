@@ -1,11 +1,4 @@
-/*
- * @Author: your name
- * @Date: 2021-07-13 14:59:52
- * @LastEditTime: 2021-07-14 13:32:35
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\axioss\src\network\request.js
- */
+
 import axios from 'axios'
 
 export function request(config) {

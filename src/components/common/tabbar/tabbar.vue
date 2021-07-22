@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-08 12:49:59
- * @LastEditTime: 2021-07-08 13:32:51
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\tabbar\src\components\tabbar\tabbar.vue
--->
+
 <template>
   <div id="tab-bar">
     <slot> </slot>

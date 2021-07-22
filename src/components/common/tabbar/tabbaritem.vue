@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-08 13:25:59
- * @LastEditTime: 2021-07-08 18:27:17
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\tabbar\src\components\tabbar\tabbaritem.vue
--->
+
 <template>
   <div class="tab-bar-item" @click="itemClick">
     <div v-if="isActive"><slot name="item-icon_active"></slot></div>

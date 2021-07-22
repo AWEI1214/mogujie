@@ -1,16 +1,10 @@
-<!--
- * @Author:
-  components: { MainTabbar }, your name
- * @Date: 2021-07-12 21:14:02
- * @LastEditTime: 2021-07-15 16:11:14
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\supermall\src\App.vue
--->
+
 <template>
   <div id="app">
     <main-tabbar class="main-tabbar"></main-tabbar>
-    <router-view />
+    <keep-alive exclude="detail">
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 

@@ -1,31 +1,35 @@
-<!--
- * @Author: your name
- * @Date: 2021-07-08 16:54:38
- * @LastEditTime: 2021-07-15 19:17:33
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\tabbar\src\views\home\home.vue
--->
+
 <template>
   <div id="home">
     <navbar class="home">
-      <div slot="center">购物街</div>
+      <div slot="center" class="gw">蘑菇街</div>
     </navbar>
+    <tab-control
+      v-show="isTabFixed"
+      :title="['流行', '新款', '精选']"
+      class="tab-control1"
+      @tabClick="tabClick"
+      ref="tabcontrol1"
+    ></tab-control>
     <scroll
       class="content"
       ref="scroll"
       :probeType="3"
-      @scrolll="scrolll"
-      :pullUpload="true"
+      @scroll="scroll"
+      :pullUpLoad="true"
       @pullingUp="pullingUp"
     >
-      <home-swiper :banners="banners"></home-swiper>
+      <home-swiper
+        :banners="banners"
+        @swiperImageLoad="swiperImageLoad"
+      ></home-swiper>
       <recommend-view :recommends="recommends"></recommend-view>
       <feature></feature>
       <tab-control
         :title="['流行', '新款', '精选']"
         class="tab-control"
         @tabClick="tabClick"
+        ref="tabcontrol"
       ></tab-control>
       <goods-list :goods="showGoods"></goods-list>
     </scroll>
@@ -67,6 +71,9 @@ export default {
       },
       currentType: "pop",
       btnFlag: false,
+      tabOffsetTop: 0,
+      saveY: 0,
+      isTabFixed: false,
     };
   },
   created() {
@@ -76,14 +83,26 @@ export default {
     this.getHomeGoods("pop");
     this.getHomeGoods("new");
     this.getHomeGoods("sell");
+
+    // this.$bus.$on("itemImageLoad", () => {
+    //   console.log(123);
+    // });
   },
 
   mounted() {},
-
+  updated() {},
   computed: {
     showGoods() {
       return this.goods[this.currentType].list;
     },
+  },
+  activated() {
+    this.$refs.scroll.scrollTo(0, this.saveY, 1);
+    this.$refs.scroll.refresh();
+  },
+  deactivated() {
+    this.saveY = this.$refs.scroll.getScrollY();
+    // this.$bus.$off("imgLoad", this.imgListener);
   },
   methods: {
     /**
@@ -124,6 +143,8 @@ export default {
           this.currentType = "sell";
           break;
       }
+      this.$refs.tabcontrol1.currentIndex = index;
+      this.$refs.tabcontrol.currentIndex = index;
     },
 
     //返回顶部
@@ -132,18 +153,25 @@ export default {
     },
 
     //返回顶部按钮显示
-    scrolll(position) {
+    scroll(position) {
       // console.log(position);
       if (-position.y > 1000) {
         this.btnFlag = true;
       } else {
         this.btnFlag = false;
       }
+
+      this.isTabFixed = -position.y > this.tabOffsetTop;
     },
 
     //上拉加载
     pullingUp() {
       this.getHomeGoods(this.currentType);
+    },
+
+    swiperImageLoad() {
+      this.tabOffsetTop = this.$refs.tabcontrol.$el.offsetTop;
+      // console.log(this.tabOffsetTop);
     },
   },
 };
@@ -153,11 +181,11 @@ export default {
 .home {
   background-color: var(--color-tint);
   color: #fff;
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 10; */
 }
 
 #home {
@@ -166,13 +194,16 @@ export default {
   position: relative;
 }
 
-.tab-control {
+/* .tab-control {
   background-color: #fff;
-  /* position: sticky; */
-  /* top: 44px; */
   z-index: 10;
-}
+} */
 
+.tab-control1 {
+  position: relative;
+  z-index: 99;
+  background-color: #fff;
+}
 .content {
   /* height: 300px; */
   overflow: hidden;
